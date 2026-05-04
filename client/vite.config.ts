@@ -1,0 +1,11 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tsconfigPaths from "vite-tsconfig-paths";
+export default defineConfig({
+	envDir: "./environments",
+	plugins: [react(), tsconfigPaths()],
+	server: {
+		host: true, // IMPORTANT for docker
+		port: 5173
+	}
+});

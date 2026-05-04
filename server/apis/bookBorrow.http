@@ -1,0 +1,38 @@
+@url = http://localhost:3000
+@token = JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdkYTRjNjk4LThlMWQtNDFhNC05NmE1LTk2OTAwOWRjMzU5YyIsIm5hbWUiOiJPbW4gU2hpbmRlIiwicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6Im9tbmF0aDMiLCJpYXQiOjE3Nzc4NzA4MDd9.Xk3y91cvo0hUxbaTCFFnLhdqbPkkf_PUcobPfjIPY8c
+
+### Get all books
+GET {{url}}/books-borrow?
+Authorization: {{token}}
+Content-Type: application/json
+
+
+###
+
+
+### Create a new book-borrow
+POST {{url}}/books-borrow
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "bookId": "ad95ef12-013b-45ff-a961-92c147b767a5"
+}
+
+
+###
+
+
+### Update a book-borrow
+PUT {{url}}/books-borrow/2a870237-9532-4a35-ba2c-4875e35d4d60
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "username": "omnath12",
+  "password": "12345",
+  "siteId": 1
+}
+
+
+###

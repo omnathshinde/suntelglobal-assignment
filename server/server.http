@@ -1,0 +1,28 @@
+@url = http://localhost:3000
+@token = JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiNDFmNWFmLWZiMzQtNDMzMy1iN2I5LTdhNGU0MGE0MzlmZiIsIm5hbWUiOiJvbW5hdGgiLCJyb2xlIjoidXNlciIsInVzZXJuYW1lIjoib21uYXRoIiwiaWF0IjoxNzc3ODQ5NjcyfQ.9jeoUolXotpt85dUdDHG19-Ye7g70DtDWjhTQAJ7UPY
+
+# Server
+GET {{url}}/user
+Authorization: {{token}}
+Content-Type: application/json
+
+
+### Login
+POST {{url}}/auth/login
+Content-Type: application/json
+
+{
+    "username":"omkesh",
+    "password":"1234"
+}
+
+
+### Register
+POST {{url}}/auth/register
+Content-Type: application/json
+
+{
+    "name": "omnath",
+    "username":"omnath",
+    "password":"Admin123"
+}

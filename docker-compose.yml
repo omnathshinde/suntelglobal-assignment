@@ -1,0 +1,29 @@
+# __define-ocg__ full stack docker compose
+version: "3.8"
+
+services:
+  server:
+    build: ./server
+    container_name: backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+
+  client:
+    build: ./client
+    container_name: frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
+    command: npm run dev

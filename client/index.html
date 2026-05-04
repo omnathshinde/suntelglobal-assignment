@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite + React + TS</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+			#splash {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				position: fixed;
+				inset: 0;
+				z-index: 1000;
+				transition: opacity 0.6s;
+
+				box-shadow:
+					0 12px 40px rgba(30, 34, 45, 0.32),
+					0 2px 8px rgba(80, 80, 160, 0.11);
+			}
+
+			/* 🌙 Dark mode */
+			@media (prefers-color-scheme: dark) {
+				#splash {
+					background: #1a1d23;
+					color: white;
+				}
+			}
+
+			/* ☀️ Light mode */
+			@media (prefers-color-scheme: light) {
+				#splash {
+					background: #ffffff;
+					color: #111;
+				}
+			}
+
+			#splash img {
+				width: 90px;
+				margin-bottom: 32px;
+				animation: float s ease-in-out infinite;
+				background: transparent;
+			}
+
+			.loading {
+				width: 90px;
+				height: 30px;
+				--g: repeat-x
+					repeating-linear-gradient(
+						90deg,
+						currentColor 0 16px,
+						transparent 0 18px,
+						currentColor 0 34px,
+						transparent 0 100%
+					);
+				background: var(--g), var(--g);
+				background-size: 60px 14px;
+				animation: l8 1s infinite linear;
+			}
+
+			@keyframes float {
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(-18px);
+				}
+			}
+
+			@keyframes l8 {
+				0% {
+					background-position:
+						0 0,
+						0 100%;
+				}
+
+				100% {
+					background-position:
+						60px 0,
+						60px 100%;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="splash">
+			<img src="/src/assets/react.svg" alt="Loading Splash Screen..." />
+			<div class="loading"></div>
+		</div>
+		<div id="root"></div>
+		<script type="module" src="/src/main.tsx"></script>
+	</body>
+</html>

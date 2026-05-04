@@ -1,0 +1,70 @@
+{
+	"name": "server",
+	"type": "module",
+	"license": "ISC",
+	"version": "1.0.0",
+	"main": "server.js",
+	"author": "Omnath Shinde",
+	"description": "Node.js Server",
+	"keywords": [
+		"Node.js",
+		"Express"
+	],
+	"imports": {
+		"#logs": "./logs",
+		"#src/*": "./src/*",
+		"#base/*": "./src/base/*",
+		"#db/*": "./src/base/database/*"
+	},
+	"scripts": {
+		"start": "node src/server",
+		"dev": "nodemon src/server",
+		"prepare": "husky",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check ."
+	},
+	"dependencies": {
+		"argon2": "^0.44.0",
+		"compression": "^1.8.1",
+		"cors": "^2.8.6",
+		"dayjs": "^1.11.20",
+		"dotenv": "^17.4.2",
+		"express": "^5.2.1",
+		"express-async-handler": "^1.2.0",
+		"express-rate-limit": "^8.4.1",
+		"helmet": "^8.1.0",
+		"http-errors": "^2.0.1",
+		"jsonwebtoken": "^9.0.3",
+		"morgan": "^1.10.1",
+		"multer": "^2.1.1",
+		"mysql2": "^3.22.3",
+		"sequelize": "^6.37.8",
+		"winston": "^3.19.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.39.4",
+		"eslint": "^9.39.4",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^5.5.5",
+		"eslint-plugin-simple-import-sort": "^12.1.1",
+		"globals": "^16.5.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.4.0",
+		"nodemon": "^3.1.14",
+		"prettier": "^3.8.3",
+		"prettier-eslint": "^16.4.2"
+	},
+	"lint-staged": {
+		"**/*.{js}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"**/*.{json,md,css,html}": [
+			"prettier --write"
+		]
+	}
+}

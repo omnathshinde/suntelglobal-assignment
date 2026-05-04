@@ -1,0 +1,41 @@
+@url = http://localhost:3000
+@token = JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiNDFmNWFmLWZiMzQtNDMzMy1iN2I5LTdhNGU0MGE0MzlmZiIsIm5hbWUiOiJvbW5hdGgiLCJyb2xlIjoidXNlciIsInVzZXJuYW1lIjoib21uYXRoIiwiaWF0IjoxNzc3ODQ5Njk4fQ.LNtt8wxrFArV_hoPfh_q91yjNskHbEqsHPr4D-lsZcs
+
+### Get all books
+GET {{url}}/books?
+Authorization: {{token}}
+Content-Type: application/json
+
+
+###
+
+
+### Create a new book
+POST {{url}}/books
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "title": "Wings of Fire",
+    "author": "APJ Abdule Kalam",
+    "status": "Available",
+    "publishedYear": 2012
+}
+
+
+###
+
+
+### Update a user
+PUT {{url}}/books/2a870237-9532-4a35-ba2c-4875e35d4d60
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "username": "omnath12",
+  "password": "12345",
+  "siteId": 1
+}
+
+
+###
